@@ -4,65 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XD Presentation</title>
+    <title>Interactive Signup!</title>
 
-        <!--External Files-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-        
-        <!--Internal Files-->
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--External Files-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
+
     
 
-    <div class="container-fluid"> <!--Bootstrap Container-->
-        <div class="row">
-            <div class="col-12">
-                <div class="form-con">
-                    <form>
-                        <div class="form-title">
-                            <div class="overlay">
-                                <div class="title">
-                                    <h1>
-                                        Test Form
-                                    </h1>
-                                </div>
-                                <div class="line-el"></div>
-                            </div>
-                        </div>
+    <div class="form-container">
+        <h1>
+            Sing Up
+        </h1>
 
-                        <div class="form-el">
-                            <input class="input-el" type="text" placeholder="Your Name" required>
-                            <input class="input-el" type="text" placeholder="Your Surname" required>  
-                            <input class="input-el" type="email" placeholder="Your Email" required>   
-                            
-                            <select class="input-el" required>
-                                <option selected = "selected">Select Drop Down</option>
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                                <option>Option 5</option>
-
-                                <textarea class="input-tf" placeholder="Text Area" rows="4"></textarea>
-
-                                <button class="input-btn" type="submit">Submit</button>
-                            </select>
-
-                            <p class="bad-error">Exception in thread "main" java.lang.NullPointerException
-                                at Main.main(Main.java:18)
-                            </p>
-                            <p class="good-error">
-                                You have left one or more fields blank, please fill them in
-                            </p>
-                        </div>
-
-                    </form>
+        <div class="password-requirements">
+            <h5 class="requirements-header">
+                Password Requirements:
+            </h5>
+            <div id="numberRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Contains at least 1 number
+                </div>
+            </div>
+            <div id="lengthRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Contains at least 8 characters
+                </div>
+            </div>
+            <div id="lowerCaseRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Contains at least 1 lower case letter
+                </div>
+            </div>
+            <div id="upperCaseRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Contains at least 1 upper case letter
+                </div>
+            </div>
+            <div id="specialCharacterRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Contains at least 1 of the following characters: @, #, $, %, ^, &, *
+                </div>
+            </div>
+            <div id="passwordsMatchRequirement" class="requirement">
+                <div class="fulfilled-symbol">
+                    Passwords must match
                 </div>
             </div>
         </div>
-    </div> <!--Bootstrap Container-->
+
+        <form class="text-centre border border-light p-5" onsubmit="event.preventDefault(); console.log('SUCCESS!');">
+            <input required type="email" id="usernameInput" class="form-control mb4" placeholder="Email">
+            <input required type="password" id="passwordInput" class="form-control mb4 input-listener" placeholder="Password">
+            <input required type="password" id="confirmPasswordInput" class="form-control mb4 input-listener" placeholder="Confirm Password">
+            <button disabled class="btn btn-info btn-block my-4" id="submitBtn" type="submit">Sign In</button>
+        </form>
+
+    </div>
+
+    <script src="./js/test.js"></script>
 
 </body>
 </html>
